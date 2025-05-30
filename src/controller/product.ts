@@ -25,7 +25,7 @@ module.exports = {
     }
   },
   getProduct: async (req: Request, res: Response) => {
-    const { name, minPrice, maxPrice } = req.params;
+    const { name, minPrice, maxPrice } = req.query;
     const query: any = {};
     if (name) query.name = { $regex: name, $options: "i" };
 
